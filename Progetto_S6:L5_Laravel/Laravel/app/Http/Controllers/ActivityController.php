@@ -37,7 +37,7 @@ class ActivityController extends Controller
      */
     public function show(Activity $activity)
     {
-        //
+        return view('projects_detail',['project'=> $activity]);
     }
 
     /**

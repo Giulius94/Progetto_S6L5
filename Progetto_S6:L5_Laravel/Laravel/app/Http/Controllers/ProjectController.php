@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Models\Activity;
 use App\Models\Project;
 
 class ProjectController extends Controller
@@ -13,7 +14,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-       return view('projects',['projects'=> Project::get()]);
+       return view('projects',['activities'=> Activity::get()],['project'=> Project::get()]);
+
     }
 
     /**
@@ -37,7 +39,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('projects_detail', ['project' => $project]);
+       
     }
 
     /**
